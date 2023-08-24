@@ -69,7 +69,7 @@ function App() {
     const [ equipos, actualizarEquipos ] = useState([
         {
             id: uuid(),
-            titulo: 'Programacion',
+            titulo: 'Programación',
             colorPrimario: '#57C278',
             colorSecundario: '#D9F7E9'
         },
