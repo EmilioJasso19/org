@@ -35,7 +35,7 @@ function App() {
             nombre: "Genesys Rondon",
             puesto: "Desarrolladora de software e instructora",
             foto: "https://github.com/genesysrm.png",
-            equipo: "Programacion",
+            equipo: "Programación",
             fav: false
         },
         {
@@ -53,7 +53,7 @@ function App() {
             nombre: "Christian Velasco",
             puesto: "Head de Alura e Instructor",
             foto: "https://github.com/christianpva.png",
-            equipo: "Programacion",
+            equipo: "Programación",
             fav: false
         },
         {
