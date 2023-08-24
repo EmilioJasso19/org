@@ -35,7 +35,7 @@ function App() {
             nombre: "Genesys Rondon",
             puesto: "Desarrolladora de software e instructora",
             foto: "https://github.com/genesysrm.png",
-            equipo: "Programación",
+            equipo: "Programacion",
             fav: false
         },
         {
@@ -53,7 +53,7 @@ function App() {
             nombre: "Christian Velasco",
             puesto: "Head de Alura e Instructor",
             foto: "https://github.com/christianpva.png",
-            equipo: "Programación",
+            equipo: "Programacion",
             fav: false
         },
         {
@@ -69,7 +69,7 @@ function App() {
     const [ equipos, actualizarEquipos ] = useState([
         {
             id: uuid(),
-            titulo: 'Programación',
+            titulo: 'Programacion',
             colorPrimario: '#57C278',
             colorSecundario: '#D9F7E9'
         },
