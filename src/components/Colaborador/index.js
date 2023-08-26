@@ -1,5 +1,6 @@
 import './Colaborador.css'
-import { AiFillCloseCircle, AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
+import { AiFillCloseCircle, AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import hexToRgba from "hex-to-rgba";
 
 
 const Colaborador = (props) => {
@@ -7,7 +8,7 @@ const Colaborador = (props) => {
     const { colorPrimario, eliminarColaborador, like } = props
 
     return <div className='colaborador'>
-        <AiFillCloseCircle className='eliminar' onClick={() => eliminarColaborador(id)} />
+        <AiFillCloseCircle color='#E5E5E5' className='eliminar' onClick={() => eliminarColaborador(id)} />
         <div className='encabezado' style={{backgroundColor: colorPrimario}}>
             <img
                 src={foto}
