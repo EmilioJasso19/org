@@ -6,6 +6,7 @@ import Formulario from "./components/Formulario/Formulario";
 import MiOrg from "./components/MiOrg";
 import Equipo from "./components/Equipo";
 import Footer from "./components/Footer";
+import React, { useEffect } from 'react';
 
 function App() {
 
@@ -122,6 +123,7 @@ function App() {
     const registrarColaborador =(colaborador) => {
         console.log('nuevo colaborador', colaborador)
         actualizarColaboradores([...colaboradores, colaborador])
+        localStorage.setItem('colaboradores', JSON.stringify([...colaboradores, colaborador]));
     }
 
     // Eliminar colaborador
@@ -129,6 +131,7 @@ function App() {
         console.log('Eliminar colaborador', id)
         const nuevosColaboradores = colaboradores.filter((colaborador) => colaborador.id !== id)
         actualizarColaboradores(nuevosColaboradores)
+        localStorage.setItem('colaboradores', JSON.stringify(nuevosColaboradores));
     }
 
     // Actualizar color
@@ -142,12 +145,14 @@ function App() {
         })
 
         actualizarEquipos(equiposActualizados)
+        localStorage.setItem('equipos', JSON.stringify(equiposActualizados));
     }
 
     // Crear equipo
     const crearEquipo = (nuevoEquipo) => {
         console.log(nuevoEquipo)
         actualizarEquipos([...equipos, { ...nuevoEquipo, id: uuid() }])
+        localStorage.setItem('equipos', JSON.stringify([...equipos, { ...nuevoEquipo, id: uuid() }]));
     }
 
     // Cambiar fav
@@ -160,7 +165,21 @@ function App() {
             return colaborador
         })
         actualizarColaboradores(colaboradoresActualizados)
+        localStorage.setItem('colaboradores', JSON.stringify(colaboradoresActualizados));
     }
+
+    useEffect(() => {
+        const storedColaboradores = localStorage.getItem('colaboradores');
+        const storedEquipos = localStorage.getItem('equipos');
+
+        if (storedColaboradores) {
+            actualizarColaboradores(JSON.parse(storedColaboradores));
+        }
+
+        if (storedEquipos) {
+            actualizarEquipos(JSON.parse(storedEquipos));
+        }
+    }, []);
 
     return (
       <div>
